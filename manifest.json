@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Binge",
+    "author": "SE GROUP-7",
+    "version": "1.0",
+    "description": "Extension to get movie ratings",
+    "content_scripts": [
+        {
+            "js": [
+                "client/js/appConstants.js",
+                "client/js/apiKeys.js",
+                "client/js/apiService.js",
+                "client/js/content.js"
+            ],
+            "matches": ["https://www.netflix.com/browse"]
+        }
+    ],
+    "permissions": ["storage", "tabs"]
+}
