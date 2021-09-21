@@ -47,41 +47,33 @@ function get_details(id) {
     console.error(error);
   });
 
+const RATINGS = {
+    RottenTomatoes: "",
+    IMDB: ""
 }
 
+const getDetails = async(title) => {
+    var API_KEY="631772a5";
+    var URL=`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`;
 
-function get_id(t){
-  var options = {
-    method: 'GET',
-    url: URL,
-    params: {type: 'get-movies-by-title', title: t},
-    headers: {
-      'x-rapidapi-host': HOST,
-      'x-rapidapi-key': API_KEY
+    try {
+         const response = await axios.get(URL)
+         const ratings = response.data['Ratings'];
+         ratings.forEach(element => {
+             if (element['Source']=="Internet Movie Database"){
+                RATINGS["RottenTomatoes"]=element["Value"];
+             }
+             if (element['Source']=="Rotten Tomatoes"){
+                 RATINGS["IMDB"] = element["Value"];
+            }
+         });
+         } catch(errors){
+             console.error(errors)
+         }
+
+    console.log(RATINGS)
+    return RATINGS;
     }
-  };
-  
-  axios.request(options).then(function (response) {
-    var results = response.data.movie_results;
-    results.forEach(function(e,i){
-      console.log(e['imdb_id'])
-      return(e['imdb_id'])
-    });
-  }).catch(function (error) {
-    console.error(error);
-  });
-}
-
-
-
-// Local test
-
-async function main(){
-  var test_query = "i am legend";
-  var id = await get_id(test_query);
-  get_details(id);
-}
-main();
 
 
 
