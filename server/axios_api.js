@@ -1,32 +1,28 @@
 const { default: axios } = require("axios");
-const RATINGS = {
-    RottenTomatoes: "",
-    IMDB: ""
-}
+var API_KEY="631772a5";
 
-const getDetails = async(title) => {
-    var API_KEY="631772a5";
+
+const getRatings = async(title) => {
     var URL=`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`;
-
+    const ratings = {
+        RottenTomatoes: "",
+        IMDB: ""
+    };
     try {
          const response = await axios.get(URL)
-         const ratings = response.data['Ratings'];
-         ratings.forEach(element => {
-             if (element['Source']=="Internet Movie Database"){
-                RATINGS["RottenTomatoes"]=element["Value"];
+         const data = response.data.Ratings;
+         data.forEach(rating => {
+             if (rating.Source=="Internet Movie Database"){
+                ratings.IMDB=rating.Value;
              }
-             if (element['Source']=="Rotten Tomatoes"){
-                 RATINGS["IMDB"] = element["Value"];
+             if (rating.Source=="Rotten Tomatoes"){
+                 ratings.RottenTomatoes = rating.Value;
             }
          });
          } catch(errors){
-             console.error(errors)
+             console.error(errors);
          }
-
-    console.log(RATINGS)
-    return RATINGS;
+    return ratings;
     }
-
-
 
 
