@@ -12,7 +12,16 @@
                 "client/js/apiService.js",
                 "client/js/content.js"
             ],
-            "matches": ["https://www.netflix.com/browse"]
+            "matches": ["*://*.netflix.com/browse*", "*://*.netflix.com/search*"]
+        },
+        {
+            "js": [
+                "client/js/netflix/watchScreen.js"
+            ],
+            "css": [
+                "client/css/cast.css"
+            ],  
+            "matches": ["*://*.netflix.com/watch/*"]
         }
     ],
     "permissions": ["storage", "tabs"]

@@ -1,0 +1,18 @@
+.cast-div {
+    position: fixed;
+    top: 300px;
+    right: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cast-list {
+    margin: 5px;
+}
+
+.cast {
+    padding: 20px
+}
+
+.cast-text {
+    color: rgba(255, 255, 255);
+}
