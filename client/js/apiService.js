@@ -17,6 +17,7 @@ const fetchRatings = async (title) => {
     let defaultRatings = {
         imdbRating: 'N/A',
         rottenTomato: 'N/A',
+        cast: 'N/A',
     };
     try {
         const omdbResponse = await fetch(
@@ -38,6 +39,7 @@ const fetchRatings = async (title) => {
                 rottenTomato: extractRottenTomatoRating(
                     omdbResponseJson.Ratings || []
                 ),
+                cast: omdbResponseJson.Actors
             };
         }
     } catch (error) {

@@ -45,7 +45,7 @@ const getCastDetails = async (title) => {
         return castDetailsInLocalStorage;
     }
 
-    const castDetails = await getMovieDetails(title);
+    const castDetails = await fetchRatings(title);
     storeCastDetailsInLocalStorage(title, castDetails);
     return castDetails;
 };
@@ -77,25 +77,45 @@ function storeCastDetailsInLocalStorage(title, castDetails) {
     }
 }
 
-casts = ["Salmon Bhoi", "ShehRakh Khon", "Amor Khon"]
+function getCastDetails1(title){
+    casts = ["Salmon Bhoi", "ShehRakh Khon", "Amor Khon"];
+    return casts;
+}
 
 // addToWatchScreen(casts)
 
-function getMovieTitle()
-{
-    let x = document.getElementsByClassName("ltr-kpws2k");
-    let y = x.item(0);
-    let z = y.innerHTML;
-    // let z = y.getElementsByTagName("h4").item(0).innerHTML;
-    console.log(x);
-    console.log(y);
-    console.log(z);
+/**
+ * Function to get the title of the movie / series that is currently playing in the screen
+ * @returns 
+ */
+function getTitle() {
+    let title = ''
+    let bottomControlSection = document.getElementsByClassName("ltr-kpws2k").item(0);
+    let bottomControlSectionInfo = bottomControlSection.getElementsByTagName("h4");
+    // console.log(bottomControlSectionInfo)
+    
+    // For movies, info is obtained this way
+    if(bottomControlSectionInfo === null || bottomControlSectionInfo.length === 0) {
+        title = bottomControlSection.innerHTML;
+    }
+    else {
+        // For series, info is obtained this way because it has series title name + episode number aswell
+        title = bottomControlSection.getElementsByTagName("h4").item(0).innerHTML;
+    }
+    console.log("Movie title ", title);
+    return title;
 }
 
 var mutationObserver = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         if(mutation.target.className === 'active ltr-fntwn3'){
-            getMovieTitle();
+            const title = getTitle();
+            
+            // Get the cast details
+            // const movieDetails = getCastDetails(title);
+            const casts = getCastDetails1(title);
+            console.log("printing cast details ", casts);
+            console.log(typeof(casts));
             addToWatchScreen(casts)
         }
         else if(mutation.target.className == 'inactive ltr-fntwn3'){

@@ -24,31 +24,3 @@ const getRatings = async (title) => {
     }
     return ratings;
 }
-
-
-const getMovieDetails = async (title) => {
-    var URL = `https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`;
-    const movieDetails = {
-        RottenTomatoes: "",
-        IMDB: "",
-        Cast: "",
-    };
-    try {
-        const response = await axios.get(URL)
-        const data = response.data;
-        const ratings = data.Ratings;
-        const cast = data.Actors;
-        ratings.forEach(rating => {
-            if (rating.Source == "Internet Movie Database") {
-                movieDetails.IMDB = rating.Value;
-            }
-            if (rating.Source == "Rotten Tomatoes") {
-                movieDetails.RottenTomatoes = rating.Value;
-            }
-        });
-    } catch (errors) {
-        console.error(errors);
-    }
-    return movieDetails;
-}
-
