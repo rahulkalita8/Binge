@@ -1,17 +1,16 @@
-const CAST = 'actors';
 
+const CAST = 'actors';
 function createCastList(casts){
-    let castList=document.createElement('ol');
+    let castList = document.createElement('ol');
     castList.className = "cast-list"
-    for(var i=0;i<casts.length;i++)
-    {
-        let singleCast=document.createElement('li');
+    casts.forEach(cast => {
+        let singleCast = document.createElement('li');
         singleCast.className = "cast"
-        let castName = document.createTextNode(casts[i])
+        let castName = document.createTextNode(cast)
         castName.className = "cast-text"
         singleCast.appendChild(castName);
         castList.appendChild(singleCast);
-    }
+    });
     return castList;
 }
 
@@ -23,7 +22,7 @@ function createCastDiv(casts){
 }
 
 function listAlreadyExists(){
-    return document.getElementsByClassName('cast-div').length != 0
+    return document.getElementsByClassName('cast-div').length !== 0
 }
 
 function addToWatchScreen(casts){

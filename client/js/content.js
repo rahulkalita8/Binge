@@ -92,6 +92,7 @@ const induceDelay = (elem, callback) => {
 
 const observeChangesInDom = async () => {
     const netflixAllTitles = document.querySelectorAll('[id^="title-"]');
+    getTitleAndDateFromModal()
     for (title of netflixAllTitles) {
         const elem = title.firstChild;
         induceDelay(elem, addRatingsToTile);

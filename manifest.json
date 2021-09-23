@@ -10,8 +10,9 @@
                 "client/js/appConstants.js",
                 "client/js/apiKeys.js",
                 "client/js/apiService.js",
-                "client/js/content.js",
                 "server/axios_api.js"
+                "client/js/modalContent.js",
+                "client/js/content.js"
             ],
             "matches": ["*://*.netflix.com/browse*", "*://*.netflix.com/search*"]
         },
