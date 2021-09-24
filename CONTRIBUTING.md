@@ -15,7 +15,7 @@ First of all thank you very much for reaching the contribution page. We do belie
 
 ## Code of Conduct
 The project is strictly governed by our [Code of Conduct](CODE_OF_CONDUCT.md) and everyone participating in it is expected to uphold this code. 
-Please report any unacceptable behavior to [igupta@ncsu.edu](mailto:ktummur@ncsu.edu)
+Please report any unacceptable behavior to [ktummur@ncsu.edu](mailto:ktummur@ncsu.edu)
 
 ## You can Become a Contributor
 After all that's why you are here right? To start, below are some of the ideas we have:
@@ -59,7 +59,7 @@ Once you PR is merged, you will be added to the contributors list.
 
 ## Need more help?
 
-If for any reason you have questions on the process, feel free to reach us back at [igupta@ncsu.edu](mailto:ktummur@ncsu.edu). Github process can be very complex and we dont want to loose your valuable contributions because of that. We are very excited that you have visited us and you will make our project much better.
+If for any reason you have questions on the process, feel free to reach us back at [ktummur@ncsu.edu](mailto:ktummur@ncsu.edu). Github process can be very complex and we dont want to loose your valuable contributions because of that. We are very excited that you have visited us and you will make our project much better.
 
 ## References
 
