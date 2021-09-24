@@ -10,7 +10,11 @@
                 "client/js/appConstants.js",
                 "client/js/apiKeys.js",
                 "client/js/apiService.js",
+<<<<<<< HEAD
+                "server/axios_api.js"
                 "client/js/modalContent.js",
+=======
+>>>>>>> 63b79c0 (Removed axios api js reference from manifest json)
                 "client/js/content.js"
             ],
             "matches": ["*://*.netflix.com/browse*", "*://*.netflix.com/search*"]
