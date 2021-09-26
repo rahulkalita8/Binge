@@ -1,5 +1,9 @@
 # Binge
 
+<p align="center">
+[![License](https://img.shields.io/github/license/NCSU-Group7-SE2021/BINGE)](https://github.com/NCSU-Group7-SE2021/Binge/blob/main/LICENSE)
+</p>
+
 Have you ever been tired and wished to **NETFLIX & CHILL** but got more tired looking out for the best video content to watch for? This repository aims to provide quality and essential information about the video contents to the users which will help them get the best streaming experience. About 60% of the users look out for details like ratings, people's reviews, critic's reviews and cast information before deciding to watch a movie or series. Although each of the streaming platform provides some suggestions based on peer likeability, user's watch pattern and their sophisticated recommendation engines, most of them don't serve some critical information available on the internet. Some common platforms like IMDB, OMDB, ROTTEN TOMATOES still have a reputable rating and review mechanism which the world looks out for.
 
 Our application - '**BINGE**' - serves as a `Google Chrome Extension` which provides information about ratings, reviews, trivia, cast details etc on the home and watch screen of the video streaming platform. This saves a lot of time and effort for the users and provides a one stop place to get quick access to required information about the content. The application has a few core implementations like :
