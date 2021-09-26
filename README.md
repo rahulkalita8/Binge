@@ -35,7 +35,7 @@ This project is developed using Vanilla JS. No other packages and libraries are 
 5. Hover on the watch screen to get detailed description about the cast.
 
 ## Repository Structure
-The repository is structured as Client and Server directories separately. The **CLIENT** directory contains all the files necessary to create and modify the UI aspects of the application. The files in the **SERVER** directory contains some backend logics that parses and fetches the data for every movie / show title referred from the client.
+The repository is structured as Client and Server directories separately. The [CLIENT](https://github.com/vickymhs/Binge/tree/readme/client) directory contains all the files necessary to create and modify the UI aspects of the application. The files in the [SERVER](https://github.com/vickymhs/Binge/tree/readme/server) directory contains some backend logics that parses and fetches the data for every movie / show title referred from the client.
 
 All Chrome extensions require a **MANIFEST** file. The Manifest file tells Chrome everything it needs to know to properly load up the extension in Chrome. 
 
