@@ -8,3 +8,46 @@ Our application - 'BINGE' - serves as a `Google Chrome Extension` which provides
 2. Provides detailed RATINGS and TRIVIA at the expanded dialog screen.
 3. Display the cast details at any moment on the watch screen.
 
+## Table of Content
+1. [Installation](#installation)
+2. [Usage](#usage)
+2. [License](#license)
+3. [Meet the contributors](#meet-the-contributors)
+4. [Additional Link](#additional-link)
+
+## Installation
+A guide to direct user on how to install the repository is a step towards making a descriptive project. Here is our guide on how to install this project on your local environment.
+
+This project is developed using Vanilla JS. No other packages and libraries are required. There are a few steps to setup the chrome extension on the browser to run it locally.
+
+1. Type “chrome://extensions” in a tab to bring up the extensions page.
+2. Once on this page, check “Developer mode” to enable loading unpacked extensions. This will allow you to load your extension from a folder.
+3. Finally, click “Load unpacked extension” or simply drag the “BINGE” folder onto the page to load up the extension.
+4. You should immediately see the extension show up as a Browser Action with your icon in the toolbar window of the current tab.
+
+
+## Usage
+1. To test out the extension, navigate to "https://www.netflix.com/browse".
+2. Then, go ahead and click the icon for our "BINGE" extension.
+3. Hover over the movie tiles on the screen and you should see the ratings right away.
+4. Click on the expand section to see the ratings and trivia information.
+5. Hover on the watch screen to get detailed description about the cast.
+
+## License
+
+Each repository should get a license. To understand more about licensing, please refer [this](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository)
+
+This repository is [Apache 2.0 licensed](https://github.com/NCSU-Group7-SE2021/Binge/blob/main/LICENSE).  
+
+## Meet the contributors
+
+1. [Eshita Arza](https://github.com/ArzaEshita)
+2. [Isha Gupta](https://github.com/isha-bansal0115)
+3. [Kiran Teja](https://github.com/kirantejatummuri)
+4. [Luis](https://github.com/lgdeloss)
+5. [Rahul Kalita](https://github.com/rahulkalita8)
+6. [Vignesh Muthukumar](https://github.com/vickymhs)
+
+## Additional Link
+1. Want to contribute? [Here](CONTRIBUTING.md) is how you can do it.
+2. Project Standards? Say no more. [Read this](CODE_OF_CONDUCT.md)
