@@ -4,7 +4,7 @@ function createCastList(casts){
     let castList = document.createElement('ol');
     castList.className = "cast-list"
     casts.forEach(cast => {
-        let singleCast = document.createElement('li');
+        let singleCast = document.createElement('ol');
         singleCast.className = "cast"
         let castName = document.createTextNode(cast)
         castName.className = "cast-text"
@@ -76,13 +76,6 @@ function storeCastDetailsInLocalStorage(title, castDetails) {
     }
 }
 
-function getCastDetails1(title){
-    casts = ["Salmon Bhoi", "ShehRakh Khon", "Amor Khon"];
-    return casts;
-}
-
-// addToWatchScreen(casts)
-
 /**
  * Function to get the title of the movie / series that is currently playing in the screen
  * @returns 
@@ -91,7 +84,6 @@ function getTitle() {
     let title = ''
     let bottomControlSection = document.getElementsByClassName("ltr-kpws2k").item(0);
     let bottomControlSectionInfo = bottomControlSection.getElementsByTagName("h4");
-    // console.log(bottomControlSectionInfo)
     
     // For movies, info is obtained this way
     if(bottomControlSectionInfo === null || bottomControlSectionInfo.length === 0) {
@@ -111,11 +103,13 @@ var mutationObserver = new MutationObserver(function(mutations) {
             const title = getTitle();
             
             // Get the cast details
-            // const movieDetails = getCastDetails(title);
-            const casts = getCastDetails1(title);
-            console.log("printing cast details ", casts);
-            console.log(typeof(casts));
-            addToWatchScreen(casts)
+            const response = getCastDetails(title).then(result => {
+                    var castString = result.cast;
+                    if(castString === 'N/A')
+                        castString = 'Cast Information not available';
+                    const casts = castString.split(',');
+                    addToWatchScreen(casts)
+                });
         }
         else if(mutation.target.className == 'inactive ltr-fntwn3'){
             let castListDiv = document.getElementsByClassName('cast-div')

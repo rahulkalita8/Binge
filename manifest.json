@@ -11,18 +11,17 @@
                 "client/js/apiKeys.js",
                 "client/js/apiService.js",
                 "client/js/modalContent.js",
-                "client/js/content.js"
-            ],
-            "matches": ["*://*.netflix.com/browse*", "*://*.netflix.com/search*"]
-        },
-        {
-            "js": [
+                "client/js/content.js",
                 "client/js/netflix/watchScreen.js"
             ],
+                        
             "css": [
                 "client/css/cast.css"
-            ],  
-            "matches": ["*://*.netflix.com/watch/*"]
+            ],
+
+            "matches": ["*://*.netflix.com/browse*", 
+                "*://*.netflix.com/search*", 
+                "*://*.netflix.com/watch/*"]
         }
     ],
     "permissions": ["storage", "tabs"]
