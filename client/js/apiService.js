@@ -3,7 +3,7 @@ const MOVIE_NOT_FOUND = 'Movie not found!';
 const extractRottenTomatoRating = (ratingsArray) => {
     if (ratingsArray.length > 0) {
         const rottenTomatoRating = ratingsArray[1]
-            ? ratingsArray[1].value
+            ? ratingsArray[1].Value
             : 'N/A';
         return rottenTomatoRating;
     }
