@@ -1,5 +1,8 @@
-# Binge
+<p align="center">
+![Logo](Binge.jpeg)
+</p>
 
+# Binge
 <p align="center">
 
 [![License](https://img.shields.io/github/license/NCSU-Group7-SE2021/Binge)](https://github.com/NCSU-Group7-SE2021/Binge/blob/main/LICENSE)
