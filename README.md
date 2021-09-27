@@ -1,5 +1,7 @@
 <p align="center">
+
 ![Logo](Binge.jpeg)
+
 </p>
 
 # Binge
