@@ -104,8 +104,8 @@ var mutationObserver = new MutationObserver(function(mutations) {
             
             // Get the cast details
             const response = getCastDetails(title).then(result => {
-                    var castString = result.cast;
-                    if(castString === 'N/A')
+                    let castString = result ? result.cast : null;
+                    if(castString === 'N/A' || castString === null)
                         castString = 'Cast Information not available';
                     const casts = castString.split(',');
                     addToWatchScreen(casts)
