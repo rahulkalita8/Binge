@@ -32,15 +32,16 @@ A guide to direct user on how to install the repository is a step towards making
 
 This project is developed using Vanilla JS. No other packages and libraries are required. There are a few steps to setup the chrome extension on the browser to run it locally.
 
-1. Type “chrome://extensions” in a tab to bring up the extensions page.
-2. Once on this page, check “Developer mode” to enable loading unpacked extensions. This will allow you to load your extension from a folder.
-3. Finally, click “Load unpacked extension” or simply drag the “BINGE” folder onto the page to load up the extension.
-4. You should immediately see the extension show up as a Browser Action with your icon in the toolbar window of the current tab.
+1. Clone the repository using `git clone https://github.com/NCSU-Group7-SE2021/Binge.git`
+2. Type `chrome://extensions` in a tab to bring up the extensions page.
+3. Once on this page, check `Developer mode` to enable loading unpacked extensions. This will allow you to load your extension from a folder.
+4. Finally, click `Load unpacked extension` or simply drag the “BINGE” folder onto the page to load up the extension.
+5. You should immediately see the extension show up as a Browser Action with your icon in the toolbar window of the current tab.
 
 
 ## Usage
-1. To test out the extension, navigate to "https://www.netflix.com/browse".
-2. Then, go ahead and click the icon for our "**BINGE**" extension.
+1. To test out the extension, navigate to https://www.netflix.com/browse.
+2. Then, go ahead and click the icon for our **BINGE** extension.
 3. Hover over the movie tiles on the screen and you should see the ratings right away.
 4. Click on the expand section to see the ratings and trivia information.
 5. Hover on the watch screen to get detailed description about the cast.
