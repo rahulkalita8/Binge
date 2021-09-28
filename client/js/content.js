@@ -75,13 +75,6 @@ const addRatingsToTile = async (movieTileElement) => {
         );
         movieTileElement.setAttribute('ratings', ratings);
     }
-
-    if (tileParent) {
-        tileParent.appendChild(getRatingDivElement('IMDB', ratings.imdbRating));
-        tileParent.appendChild(
-            getRatingDivElement('Rotten Tomato', ratings.rottenTomato)
-        );
-    }
 };
 
 const induceDelay = (elem, callback) => {
