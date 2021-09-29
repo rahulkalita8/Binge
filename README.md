@@ -1,6 +1,6 @@
 <p align="center">
 
-![Logo](Binge.jpeg)
+![Logo](client\assets\images\Binge.jpeg)
 
 </p>
 
