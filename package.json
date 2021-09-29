@@ -1,0 +1,19 @@
+{
+  "name": "binge",
+  "version": "1.0.0",
+  "description": "This is a chrome extension to show show/movie details like ratings, review, trivia etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NCSU-Group7-SE2021/Binge.git"
+  },
+  "author": "Group7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NCSU-Group7-SE2021/Binge/issues"
+  },
+  "homepage": "https://github.com/NCSU-Group7-SE2021/Binge#readme"
+}
