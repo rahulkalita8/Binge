@@ -4,7 +4,7 @@
   "description": "This is a chrome extension to show show/movie details like ratings, review, trivia etc",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov mocha"
+    "test": "nyc --reporter=lcov mocha "
   },
   "repository": {
     "type": "git",
