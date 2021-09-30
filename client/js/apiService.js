@@ -1,5 +1,10 @@
 const MOVIE_NOT_FOUND = 'Movie not found!';
 
+/**
+ * Function that extracts rotten tomato ratings from the api rating list
+ * @param {*} ratingsArray 
+ * @returns 
+ */
 const extractRottenTomatoRating = (ratingsArray) => {
     if (ratingsArray.length > 0) {
         const rottenTomatoRating = ratingsArray[1]
@@ -10,6 +15,11 @@ const extractRottenTomatoRating = (ratingsArray) => {
     return 'N/A';
 };
 
+/**
+ * Function that invokes the OMDB-API with video content title and API key
+ * @param {*} title 
+ * @returns detailed information about the title - ratings, reviews, cast
+ */
 const fetchRatings = async (title) => {
     // we will add functionality for user to give their keys using popup.html
     // we can discuss scope. we can do it or it can be added as future scope.
