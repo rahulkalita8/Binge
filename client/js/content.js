@@ -1,38 +1,38 @@
-const RATINGS = 'ratings';
+// const RATINGS = 'ratings';
 
 function getTitleFromCard(elem) {
     const title = elem.firstElementChild.innerText;
     return title || '';
 }
 
-const getRatings = async (title) => {
-    const ratingsInLocalStorage = getRatingsFromLocalStorage(title);
+// const getRatings = async (title) => {
+//     const ratingsInLocalStorage = getRatingsFromLocalStorage(title);
 
-    if (ratingsInLocalStorage) {
-        return ratingsInLocalStorage;
-    }
+//     if (ratingsInLocalStorage) {
+//         return ratingsInLocalStorage;
+//     }
 
-    const titleRatings = await fetchRatings(title);
-    storeRatingsInLocalStorage(title, titleRatings);
-    return titleRatings;
-};
+//     const titleRatings = await fetchRatings(title);
+//     storeRatingsInLocalStorage(title, titleRatings);
+//     return titleRatings;
+// };
 
-function storeRatingsInLocalStorage(title, ratings) {
-    if (title && ratings) {
-        let ratingsInStorage = JSON.parse(localStorage.getItem(RATINGS));
-        if (!ratingsInStorage) {
-            ratingsInStorage = {};
-        }
-        ratingsInStorage[title] = ratings;
-        localStorage.setItem(RATINGS, JSON.stringify(ratingsInStorage));
-    }
-}
+// function storeRatingsInLocalStorage(title, ratings) {
+//     if (title && ratings) {
+//         let ratingsInStorage = JSON.parse(localStorage.getItem(RATINGS));
+//         if (!ratingsInStorage) {
+//             ratingsInStorage = {};
+//         }
+//         ratingsInStorage[title] = ratings;
+//         localStorage.setItem(RATINGS, JSON.stringify(ratingsInStorage));
+//     }
+// }
 
-function getRatingsFromLocalStorage(title) {
-    const ratingsInLocalStorage = JSON.parse(localStorage.getItem(RATINGS));
-    const titleRatings = ratingsInLocalStorage && ratingsInLocalStorage[title];
-    return titleRatings;
-}
+// function getRatingsFromLocalStorage(title) {
+//     const ratingsInLocalStorage = JSON.parse(localStorage.getItem(RATINGS));
+//     const titleRatings = ratingsInLocalStorage && ratingsInLocalStorage[title];
+//     return titleRatings;
+// }
 
 const getRatingDivElement = (title, rating) => {
     const div = document.createElement('div');

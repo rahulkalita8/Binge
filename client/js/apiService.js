@@ -2,9 +2,9 @@ const MOVIE_NOT_FOUND = 'Movie not found!';
 const SERVER_BUSY = 'Server busy';
 
 /**
- * Function that extracts rotten tomato ratings from the api rating list
- * @param {*} ratingsArray 
- * @returns 
+ * Extracts rotten tomato ratings from the api rating list
+ * @param {Object} ratingsArray Object with rating details 
+ * @returns Rotten Tomatoes rating
  */
 const extractRottenTomatoRating = (ratingsArray) => {
     if (ratingsArray.length > 0) {
@@ -17,8 +17,8 @@ const extractRottenTomatoRating = (ratingsArray) => {
 };
 
 /**
- * Function that invokes the OMDB-API with video content title and API key
- * @param {*} title 
+ * Invokes the OMDB-API with video content title and API key
+ * @param {String} title 
  * @returns detailed information about the title - ratings, reviews, cast
  */
 const fetchRatings = async (title) => {
@@ -106,5 +106,9 @@ const fetchReviews = async(imdbId) => {
 };
 
 
-
-module.exports = {extractRottenTomatoRating, fetchRatings}
+module.exports = {
+    extractRottenTomatoRating, 
+    fetchRatings, 
+    extractReview, 
+    fetchReviews
+}

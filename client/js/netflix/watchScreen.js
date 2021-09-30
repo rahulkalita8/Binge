@@ -1,5 +1,10 @@
-const CAST = 'actors';
+// const CAST = 'actors';
 
+/**
+ * Create an ordered list of the casts
+ * @param {Object} casts Object of strings with cast name 
+ * @returns A HTML ordered list element
+ */
 function createCastList(casts){
     let castList = document.createElement('ol');
     castList.className = "cast-list"
@@ -14,6 +19,11 @@ function createCastList(casts){
     return castList;
 }
 
+/**
+ * Create a div to display casts
+ * @param {Object} casts Object of strings with cast name 
+ * @returns A div element
+ */
 function createCastDiv(casts){
     let castDiv = document.createElement('div')
     castDiv.className = 'cast-div'
@@ -21,10 +31,18 @@ function createCastDiv(casts){
     return castDiv
 }
 
+/**
+ * Check if the list of cast already exists
+ * @returns true if cast list element exists, false otherwise
+ */
 function listAlreadyExists(){
     return document.getElementsByClassName('cast-div').length !== 0
 }
 
+/**
+ * Add the cast to the watch screen
+ * @param {Object} casts Object of strings with cast name 
+ */
 function addToWatchScreen(casts){
     if(!listAlreadyExists()){
         let castDiv = document.getElementsByClassName('ltr-fntwn3')
@@ -32,54 +50,10 @@ function addToWatchScreen(casts){
     }    
 }
 
-/**
- * Function to get cast details based on the movie title
- * @param {*} title 
- * @returns 
- */
-const getCastDetails = async (title) => {
-    const castDetailsInLocalStorage = getCastDetailsFromLocalStorage(title);
-
-    if (castDetailsInLocalStorage) {
-        return castDetailsInLocalStorage;
-    }
-
-    const castDetails = await fetchRatings(title);
-    storeCastDetailsInLocalStorage(title, castDetails);
-    return castDetails;
-};
 
 /**
- * Function to get cast details from local browser storage
- * @param {*} 
- * title 
- * @returns 
- */
-function getCastDetailsFromLocalStorage(title) {
-    const castDetailsInLocalStorage = JSON.parse(localStorage.getItem(CAST));
-    const castDetails = castDetailsInLocalStorage && castDetailsInLocalStorage[title];
-    return castDetails;
-}
-
-/**
- * Function to store cast details in local storage
- * @param {*} title 
- * @param {*} castDetails 
- */
-function storeCastDetailsInLocalStorage(title, castDetails) {
-    if (title && castDetails) {
-        let castDetailsInStorage = JSON.parse(localStorage.getItem(CAST));
-        if (!castDetailsInStorage) {
-            castDetailsInStorage = {};
-        }
-        castDetailsInStorage[title] = castDetails;
-        localStorage.setItem(CAST, JSON.stringify(castDetailsInStorage));
-    }
-}
-
-/**
- * Function to get the title of the movie / series that is currently playing in the screen
- * @returns 
+ * Get the title of the movie / series that is currently playing in the screen
+ * @returns String with title of the series/movie
  */
 function getTitle() {
     let title = ''
@@ -98,6 +72,10 @@ function getTitle() {
     return title;
 }
 
+
+/**
+ * Mutation Observer to monitor any changes in the DOM. This will check if the watch screen is "active" which means it was hovered
+ */
 var mutationObserver = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         if(mutation.target.className === 'active ltr-fntwn3'){
@@ -121,6 +99,10 @@ var mutationObserver = new MutationObserver(function(mutations) {
     });
   });
 
+  /**
+   * Observe the DOM for any activity
+   * The commented keys are properties that we can use to monitor any activity
+   */
   mutationObserver.observe(document.body, {
     attributes: true,
     // characterData: true,
