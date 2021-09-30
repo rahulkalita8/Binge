@@ -1,3 +1,5 @@
+var isWaitingForResponse = false
+
 /** 
  *Funtion to read the title and data from the modal DOM and inject new rating div if one doesn't exist
     * @param {}
@@ -28,18 +30,22 @@ const getTitleAndDateFromModal = async() => {
 
     // Checks if the class exists. If not, it calls other functions
     // which create the div and add it to the DOM
-    if(ratingsElement == null) {
+    if(ratingsElement == null && !isWaitingForResponse) {
+        isWaitingForResponse = true
         let ratings = await fetchRatings(title); // Calls the backend function to fetch ratings
         
         if(ratings){
             //ratingsDiv - contains the div element created for ratings
-            let ratingsDiv = createRatingsDiv(ratingsDivId, ratings)
             if(ratings["reviews"].length != 0){
                 let reviewsDiv = createReviewsDiv(reviewsDivId, ratings)
-                addRatingsToInfoModal(ratingsDiv, reviewsDiv)
+                addRatingsToInfoModal(reviewsDiv)
                 addEventLisitner()
                 updateReviews(reviewsDivId)
             }
+
+            let ratingsDiv = createRatingsDiv(ratingsDivId, ratings)
+            addRatingsToInfoModal(ratingsDiv)
+            isWaitingForResponse = false
         }
     }
 }
@@ -104,15 +110,14 @@ function createReviewsDiv(divId, ratings){
  * Function to inject the ratings div to DOM
  * @param {ratingsDiv} - div to be injected
  */
-function addRatingsToInfoModal(ratingsDiv, reviewsDiv){
+function addRatingsToInfoModal(newDiv){
 
     // Gets the element with the class name - previewModal--detailsMetadata
     let header = document.getElementsByClassName('previewModal--detailsMetadata')
 
     if(header !== undefined || header[0] !== undefined){
         //injects the div after the node with the class name - previewModal--detailsMetadata
-        header[0].parentNode.insertBefore(reviewsDiv, header[0].nextSibling)
-        header[0].parentNode.insertBefore(ratingsDiv, header[0].nextSibling)
+        header[0].parentNode.insertBefore(newDiv, header[0].nextSibling)
     }
 }
 

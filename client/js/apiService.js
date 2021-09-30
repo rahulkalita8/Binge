@@ -76,7 +76,7 @@ const fetchReviews = async(imdbId) => {
     // we will add functionality for user to give their keys using popup.html
     // we can discuss scope. we can do it or it can be added as future scope.
     let reviews = []
-    let imdbApiKey = await getApiKeyFromStorage() || 'k_gea4slmo';
+    let imdbApiKey = await getImdbApiKeyFromStorage() || 'k_ke3annug';
     // let imdbApiKey = 'k_gea4slmo';
     try {
         const imdbResponse = await fetch(
