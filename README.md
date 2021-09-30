@@ -10,6 +10,9 @@
 [![License](https://img.shields.io/github/license/NCSU-Group7-SE2021/Binge)](https://github.com/NCSU-Group7-SE2021/Binge/blob/main/LICENSE)
 [![DOI](https://zenodo.org/badge/406509089.svg)](https://zenodo.org/badge/latestdoi/406509089)
 [![codecov](https://codecov.io/gh/NCSU-Group7-SE2021/Binge/branch/main/graph/badge.svg?token=CLARNXH3Q0)](https://codecov.io/gh/NCSU-Group7-SE2021/Binge)
+[![build](https://github.com/NCSU-Group7-SE2021/Binge/actions/workflows/node.js.yml/badge.svg)](https://github.com/NCSU-Group7-SE2021/Binge/actions/workflows/node.js.yml)
+[![CodeQL](https://github.com/NCSU-Group7-SE2021/Binge/actions/workflows/code-ql.yml/badge.svg)](https://github.com/NCSU-Group7-SE2021/Binge/actions/workflows/code-ql.yml)
+
 
 </p>
 
