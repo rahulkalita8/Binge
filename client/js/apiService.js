@@ -24,7 +24,7 @@ const extractRottenTomatoRating = (ratingsArray) => {
 const fetchRatings = async (title) => {
     // we will add functionality for user to give their keys using popup.html
     // we can discuss scope. we can do it or it can be added as future scope.
-    let omdbApiKey = await getApiKeyFromStorage() || '84c24527';
+    let omdbApiKey = await getApiKeyFromStorage() || '631772a5';
     let defaultRatings = {
         imdbRating: 'N/A',
         rottenTomato: 'N/A',
@@ -101,3 +101,5 @@ const fetchReviews = async(imdbId) => {
 };
 
 
+
+module.exports = {extractRottenTomatoRating, fetchRatings}

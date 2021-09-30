@@ -1,9 +1,11 @@
 const getApiKeyFromStorage = async () => {
     return new Promise((resolve) => {
-        chrome.storage.sync.get(LOCAL_STORAGE_API_KEY, (result) =>
-            resolve(result ? result[LOCAL_STORAGE_API_KEY] : '84c24527')
-        );
-    });
+            api_key = null
+            chrome.storage.sync.get(LOCAL_STORAGE_API_KEY, (result) =>
+                api_key = result ? result[LOCAL_STORAGE_API_KEY] : '631772a5'
+            );
+            resolve(api_key)
+        });
 };
 
 const getImdbApiKeyFromStorage = async () => {
@@ -13,3 +15,4 @@ const getImdbApiKeyFromStorage = async () => {
         );
     });
 };
+module.exports = {getApiKeyFromStorage, getImdbApiKeyFromStorage}

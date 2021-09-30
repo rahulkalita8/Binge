@@ -51,7 +51,8 @@ const getCastDetails = async (title) => {
 
 /**
  * Function to get cast details from local browser storage
- * @param {*} title 
+ * @param {*} 
+ * title 
  * @returns 
  */
 function getCastDetailsFromLocalStorage(title) {
