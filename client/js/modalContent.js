@@ -1,9 +1,9 @@
 var isWaitingForResponse = false
 
 /** 
- *Funtion to read the title and data from the modal DOM and inject new rating div if one doesn't exist
+ *Read the title and data from the modal DOM and inject new rating div if one doesn't exist
     * @param {}
-    * @return {}
+    * @return
 */
 const getTitleAndDateFromModal = async() => {
     // Reads the title name of movie / series from the previewModal--player-titleTreatment-logo class
@@ -32,7 +32,7 @@ const getTitleAndDateFromModal = async() => {
     // which create the div and add it to the DOM
     if(ratingsElement == null && !isWaitingForResponse) {
         isWaitingForResponse = true
-        let ratings = await fetchRatings(title); // Calls the backend function to fetch ratings
+        let ratings = await getRatings(title); // Calls the backend function to fetch ratings
         
         if(ratings){
             //ratingsDiv - contains the div element created for ratings
@@ -51,10 +51,10 @@ const getTitleAndDateFromModal = async() => {
 }
 
 /**
- * Function to create the div for ratings
- * @param {divId} - is the class name
- * @param {ratings} - JSON object which contains the ratings and reviews
- * @return {div} - div element created for ratings
+ * Create div for ratings
+ * @param {String} divId contains the DivId
+ * @param {Object} ratings Object which contains the ratings and reviews
+ * @return Object div element created for ratings
  */
 function createRatingsDiv(divId, ratings){
     let div = document.createElement('div')
@@ -69,10 +69,10 @@ function createRatingsDiv(divId, ratings){
 }
 
 /**
- * Function to create the div for reviews
- * @param {divId} - is the class name
- * @param {ratings} - JSON object which contains the ratings and reviews
- * @return {div} - div element created for reviews
+ * Create div for reviews
+ * @param {String} divId contains the DivId
+ * @param {Object} ratings Object which contains the ratings and reviews
+ * @return Object div element created for ratings
 */
 function createReviewsDiv(divId, ratings){
     let reviews_div = document.createElement('div')
@@ -103,18 +103,25 @@ function createReviewsDiv(divId, ratings){
     return reviews_div
 }
 
-
-function createAnchorElement(id, className, innerText){
+/**
+ * Create div for prev, next
+ * @param {String} divId div if of element
+ * @param {String} className class name of element
+ * @param {String} innerText inner text of element
+ * @returns Object div element created for anchors
+ */
+function createAnchorElement(divId, className, innerText){
     element = document.createElement('a')
-    element.id = id
+    element.id = divId
     element.innerText = innerText
     element.className = className
     return element
 }
 
 /**
- * Function to inject the ratings div to DOM
- * @param {ratingsDiv} - div to be injected
+ * Inject the ratings and reviews div to DOM
+ * @param {Object} newDiv div to be injected to DOM
+ * @returns
  */
 function addRatingsToInfoModal(newDiv){
 
@@ -128,8 +135,9 @@ function addRatingsToInfoModal(newDiv){
 }
 
 /**
- * Function to update reviews displayed in the modal
+ * Update reviews displayed in the modal
  * @param {}
+ * @returns
  */
 function updateReviews() {
     slideIndex = Math.floor(Math.random() * 3)
@@ -143,8 +151,9 @@ function updateReviews() {
 }
 
 /**
- * Function to listen to "click" events on the previous and next anchor elements for the reviews
+ * Listen to "click" events on the prev and next anchor elements for the reviews
  * @param {}
+ * @returns
  */
 function addEventLisitner(){
     prev_button = document.getElementById("review_prev")
