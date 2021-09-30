@@ -1,4 +1,5 @@
 const MOVIE_NOT_FOUND = 'Movie not found!';
+const SERVER_BUSY = 'Server busy';
 
 /**
  * Function that extracts rotten tomato ratings from the api rating list
@@ -28,7 +29,9 @@ const fetchRatings = async (title) => {
         imdbRating: 'N/A',
         rottenTomato: 'N/A',
         cast: 'N/A',
+        reviews: []
     };
+
     try {
         const omdbResponse = await fetch(
             encodeURI(
@@ -49,7 +52,8 @@ const fetchRatings = async (title) => {
                 rottenTomato: extractRottenTomatoRating(
                     omdbResponseJson.Ratings || []
                 ),
-                cast: omdbResponseJson.Actors
+                cast: omdbResponseJson.Actors,
+                reviews: await fetchReviews(omdbResponseJson.imdbID)
             };
         }
     } catch (error) {
@@ -57,3 +61,43 @@ const fetchRatings = async (title) => {
     }
     return defaultRatings;
 };
+
+const extractReview = async (imdbResponseJson) => {
+    let data = []
+    if (imdbResponseJson["items"]){
+        for(item in imdbResponseJson["items"]){
+            data.push(imdbResponseJson["items"][item].content)
+        }
+    }
+    return data
+}
+
+const fetchReviews = async(imdbId) => {
+    // we will add functionality for user to give their keys using popup.html
+    // we can discuss scope. we can do it or it can be added as future scope.
+    let reviews = []
+    let imdbApiKey = await getApiKeyFromStorage() || 'k_gea4slmo';
+    // let imdbApiKey = 'k_gea4slmo';
+    try {
+        const imdbResponse = await fetch(
+            encodeURI(
+                `https://imdb-api.com/en/API/MetacriticReviews/${imdbApiKey}/${imdbId}`
+            )
+        );
+
+        const imdbResponseJson = await imdbResponse.json();
+        if (
+            imdbResponseJson['errorMessage'] &&
+            imdbResponseJson['errorMessage'] === SERVER_BUSY
+        ) {
+            console.log('IMDB unable to find metacritic reviews for the given movie ' + imdbId);
+        } else {
+            reviews = extractReview(imdbResponseJson)
+        }
+    } catch (error) {
+        console.log(`Failed to fetch reviews: ${error}`);
+    }
+    return reviews;
+};
+
+

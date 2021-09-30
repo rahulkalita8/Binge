@@ -16,12 +16,12 @@ const getTitleAndDateFromModal = async() => {
     if(!year || year == null) return
 
     // Removes special characters from the title
-    title = title.replace(/[^a-z0-9\s]/gi, '')
+    updatedTitle = title.replace(/[^a-z0-9\s]/gi, '')
 
     // Removes spaces from the title
-    title = title.replace(/ /g, '')
-    let ratingsDivId = 'ratings_' + title + '_' + year
-    let reviewsDivId = 'reviews_' + title + '_' + year
+    updatedTitle = updatedTitle.replace(/ /g, '')
+    let ratingsDivId = 'ratings_' + updatedTitle + '_' + year
+    let reviewsDivId = 'reviews_' + updatedTitle + '_' + year
 
     // Fetches the element with class name present in divId
     let ratingsElement = document.getElementById(ratingsDivId)
@@ -29,19 +29,18 @@ const getTitleAndDateFromModal = async() => {
     // Checks if the class exists. If not, it calls other functions
     // which create the div and add it to the DOM
     if(ratingsElement == null) {
-        //let ratings = fetchRatings(title) // Calls the backend function to fetch ratings
-        ratings = {
-            "imdb": 8.8,
-            "rottenTomatoes": 8.7,
-            "reviews": ["Lorem ipsum dolor sit amet", "consectetur adipiscing elit", "Ut enim ad minim veniam"]
+        let ratings = await fetchRatings(title); // Calls the backend function to fetch ratings
+        
+        if(ratings){
+            //ratingsDiv - contains the div element created for ratings
+            let ratingsDiv = createRatingsDiv(ratingsDivId, ratings)
+            if(ratings["reviews"].length != 0){
+                let reviewsDiv = createReviewsDiv(reviewsDivId, ratings)
+                addRatingsToInfoModal(ratingsDiv, reviewsDiv)
+                addEventLisitner()
+                updateReviews(reviewsDivId)
+            }
         }
-    
-        //ratingsDiv - contains the div element created for ratings
-        let ratingsDiv = createRatingsDiv(ratingsDivId, ratings)
-        let reviewsDiv = createReviewsDiv(reviewsDivId, ratings)
-        addRatingsToInfoModal(ratingsDiv, reviewsDiv)
-        addEventLisitner()
-        updateReviews(reviewsDivId)
     }
 }
 
@@ -53,7 +52,7 @@ const getTitleAndDateFromModal = async() => {
  */
 function createRatingsDiv(divId, ratings){
     let div = document.createElement('div')
-    let data = `IMDB : ${ratings["imdb"]} <br>Rotten tomatoes : ${ratings["rottenTomatoes"]}`
+    let data = `IMDB : ${ratings["imdbRating"]} <br>Rotten tomatoes : ${ratings["rottenTomato"]}`
     let data_html = "<p>" + data + "</p>"
 
     div.innerHTML = data_html
