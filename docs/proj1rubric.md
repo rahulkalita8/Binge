@@ -8,21 +8,21 @@ but nevertheless, here is a track record that everyone is contributing a lot)| 2
 | Issues reports: there are **many**| 2 | https://github.com/NCSU-Group7-SE2021/Binge/issues | 
 |  issues are being  closed| 2 | https://github.com/NCSU-Group7-SE2021/Binge/issues?q=is%3Aissue+is%3Aclosed |
 | DOI badge: exists | 3 | https://zenodo.org/record/5528814#.YVT_d2Zue3I |
-|Docs: doco generated , format not ugly | **0** | **todo : pending**|
-|Docs: what: point descriptions of each class/function (in isolation) | **0** | **pending** |
+|Docs: doco generated , format not ugly | 2 | |
+|Docs: what: point descriptions of each class/function (in isolation) | 2 | |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|doc page entries|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 3 | evidence in GH |
 | Use of version control tools| 3 | https://github.com/NCSU-Group7-SE2021/Binge/graphs/traffic |
-|Use of  style checkers | **2** | **todo** |
-| Use of code  formatters. | **2** | **todo**|
-| Use of syntax checkers. | **2** | **todo**  |
-| Use of code coverage | **2** | **todo** |
+|Use of  style checkers | 2 |  |
+| Use of code  formatters. | 2 | |
+| Use of syntax checkers. | 2 |   |
+| Use of code coverage | 3 | https://app.codecov.io/gh/NCSU-Group7-SE2021/Binge |
 | other automated analysis tools| 0 | config files in GH|
-| test cases exist | **2** | **add test directory folder** |
-| test cases are routinely executed | **2** | **https://github.com/NCSU-Group7-SE2021/Binge/actions**|
+| test cases exist | 3 | https://github.com/NCSU-Group7-SE2021/Binge/tree/main/test |
+| test cases are routinely executed | 3 | https://github.com/NCSU-Group7-SE2021/Binge/actions|
 | the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 3 | https://github.com/NCSU-Group7-SE2021/Binge/blob/main/CONTRIBUTING.md |
-| issues are discussed before they are closed | even if you discuss in slack, need a sumamry statement here| 2 | **todo**|
+| issues are discussed before they are closed | even if you discuss in slack, need a sumamry statement here| 2 | |
 | Chat channel: exists| 3 | Whatsapp |
 | test cases:.a large proportion of the issues related to handling failing cases.| 0 | |
 | evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | |
@@ -39,15 +39,15 @@ Is your software available as a package that can be deployed without building it
 Is your software available for free? | 3 | |	
 Is your source code publicly available to download, either as a downloadable bundle or via access to a source code repository | 3 | |
 Is your software hosted in an established, third-party repository like GitHub (https://github.com), BitBucket (https://bitbucket.org),LaunchPad (https://launchpad.net) orSourceForge (https://sourceforge.net)? | 3 | https://github.com/NCSU-Group7-SE2021/Binge |
-Is your documentation clearly available on your website or within your software? | 3 | **todo add docs folder link** |		
+Is your documentation clearly available on your website or within your software? | 3 | https://github.com/NCSU-Group7-SE2021/Binge/tree/main/docs |		
 Does your documentation include a "quick start" guide, that provides a short overview of how to use your software with some basic examples of use? | 3 | https://github.com/NCSU-Group7-SE2021/Binge#usage	|	
 If you provide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use your software? | 3 | https://github.com/NCSU-Group7-SE2021/Binge#installation |	
-Do you provide a comprehensive guide to all your software’s commands, functions and options? | 3 | **docs** |
+Do you provide a comprehensive guide to all your software’s commands, functions and options? | 3 |  |
 Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? | 0 |
-If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation? | 3 |**docs** |		
+If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation? | 3 | |		
 Do you store your documentation under revision control with your source code? | 2 | https://github.com/NCSU-Group7-SE2021/Binge/blob/main/client/README.md |		
 Do you publish your release history e.g. release data, version numbers, key features of each release etc. on your web site or in your documentation? | 0 | https://github.com/NCSU-Group7-SE2021/Binge/releases |		
-Does your software describe how a user can get help with using your software? | 3 | **demo**		
+Does your software describe how a user can get help with using your software? | 3 |		
 Does your website and documentation describe what support, if any, you provide to users and developers? | 3 | **https://github.com/NCSU-Group7-SE2021/Binge#readme** |		
 Does your project have an e-mail address or forum that is solely for supporting users? | 1 | https://github.com/NCSU-Group7-SE2021/Binge/discussions |
 Are e-mails to your support e-mail address received by more than one person? | 0 | 		
