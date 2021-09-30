@@ -65,7 +65,7 @@ const fetchRatings = async (title) => {
 
 const extractReview = async (imdbResponseJson) => {
     let data = []
-    if (imdbResponseJson["items"]){
+    if (imdbResponseJson["items"] && imdbResponseJson["items"].length != 0){
         for(item in imdbResponseJson["items"]){
             let object = {
                 "publisher": imdbResponseJson["items"][item].publisher,
@@ -81,7 +81,7 @@ const fetchReviews = async(imdbId) => {
     // we will add functionality for user to give their keys using popup.html
     // we can discuss scope. we can do it or it can be added as future scope.
     let reviews = []
-    let imdbApiKey = await getImdbApiKeyFromStorage() || 'k_ke3annug';
+    let imdbApiKey = await getImdbApiKeyFromStorage() || 'k_0afyx7ti';
     // let imdbApiKey = 'k_gea4slmo';
     try {
         const imdbResponse = await fetch(
