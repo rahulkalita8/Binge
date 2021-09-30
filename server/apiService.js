@@ -32,3 +32,5 @@ const getRatings = async(title) => {
          }
     return ratings;
     }
+
+module.exports = {getRatings}

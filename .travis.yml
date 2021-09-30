@@ -11,4 +11,4 @@ jobs:
         - yarn
         - echo 'Testing!'
         # Perform tests below;
-        # - npm run test
+        - npm test
