@@ -81,29 +81,35 @@ function createReviewsDiv(divId, ratings){
 
     reviews_data = ratings["reviews"]
 
-    prev_element = document.createElement('a')
-    prev_element.id = "review_prev"
-    prev_element.innerText = '❮'
-    prev_element.className = "prev"
+    prev_element = createAnchorElement("review_prev", "prev", '❮')
     reviews_div.appendChild(prev_element)
 
     for(var index = 0; index < reviews_data.length; index++){
         let review_div = document.createElement('div')
-        let data = `${reviews_data[index]}`
-        let data_html = "<q>" + data + "</q>"
+        let publisher = `-${reviews_data[index]["publisher"]}`
+        let review = `${reviews_data[index]["review"]}`
+        let review_html = "<q>" + review + "</q>"
+        let publisher_html = "<p><i>" + publisher + "</i></p>"
 
-        review_div.innerHTML = data_html
+        review_div.innerHTML = review_html + publisher_html
         review_div.className = "review" 
         reviews_div.appendChild(review_div)
     }
 
-    next_element = document.createElement('a')
-    next_element.id = "review_next"
-    next_element.innerText = '❯'
-    next_element.className = "next"
+
+    next_element = createAnchorElement("review_next", "next", '❯')
     reviews_div.appendChild(next_element)
 
     return reviews_div
+}
+
+
+function createAnchorElement(id, className, innerText){
+    element = document.createElement('a')
+    element.id = id
+    element.innerText = innerText
+    element.className = className
+    return element
 }
 
 /**

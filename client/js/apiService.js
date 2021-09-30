@@ -62,11 +62,16 @@ const fetchRatings = async (title) => {
     return defaultRatings;
 };
 
+
 const extractReview = async (imdbResponseJson) => {
     let data = []
     if (imdbResponseJson["items"]){
         for(item in imdbResponseJson["items"]){
-            data.push(imdbResponseJson["items"][item].content)
+            let object = {
+                "publisher": imdbResponseJson["items"][item].publisher,
+                "review": imdbResponseJson["items"][item].content
+            }
+            data.push(object)
         }
     }
     return data
