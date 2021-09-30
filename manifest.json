@@ -16,7 +16,8 @@
             ],
                         
             "css": [
-                "client/css/cast.css"
+                "client/css/cast.css",
+                "client/css/reviews.css"
             ],
 
             "matches": ["*://*.netflix.com/browse*", 
