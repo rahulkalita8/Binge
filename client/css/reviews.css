@@ -1,44 +1,48 @@
 /* Parent reviews container */
 .parent_reviews {
-    position: relative;
-    background: #141414;
-  }
-  
-  /* Review div */
-  .review {
-    display: none;
-    padding: 30px;
-    text-align: center;
-    color: #fff;
-  }
-  
-  /* Next & previous anchors */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -30px;
-    padding: 16px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next anchor" to the right */
-  .next {
-    position: absolute;
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a white background color */
-  .prev:hover, .next:hover {
-    background-color:rgb(161, 161, 161);
-    color: white;
-  }
-  
-  /* Add an italic font style to all quotes */
-  q {font-style: italic;}
+  position: relative;
+  background: #141414;
+}
+
+/* Review div */
+.review {
+  display: none;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Next & previous anchors */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next anchor" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a white background color */
+.prev:hover,
+.next:hover {
+  background-color: rgb(161, 161, 161);
+  color: white;
+}
+
+/* Add an italic font style to all quotes */
+q {
+  font-style: italic;
+}

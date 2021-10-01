@@ -4,8 +4,8 @@
  * @returns title of the movie / series
  */
 function getTitleFromCard(elem) {
-    const title = elem.firstElementChild.innerText;
-    return title || '';
+  const title = elem.firstElementChild.innerText;
+  return title || "";
 }
 
 /**
@@ -15,9 +15,9 @@ function getTitleFromCard(elem) {
  * @returns New div object
  */
 const getRatingDivElement = (title, rating) => {
-    const div = document.createElement('div');
-    div.innerHTML = `${title} rating: ${rating}`;
-    return div;
+  const div = document.createElement("div");
+  div.innerHTML = `${title} rating: ${rating}`;
+  return div;
 };
 
 /**
@@ -27,7 +27,7 @@ const getRatingDivElement = (title, rating) => {
  * @returns HTML content with raings information
  */
 const getInnerHTML = (imdbRating, rottenTomatoRating) => {
-    const innerHTML = `
+  const innerHTML = `
     <div>
     <p style="background-color: red;
         z-index: 2;
@@ -44,7 +44,7 @@ const getInnerHTML = (imdbRating, rottenTomatoRating) => {
     </div>
     `;
 
-    return innerHTML;
+  return innerHTML;
 };
 
 /**
@@ -52,19 +52,14 @@ const getInnerHTML = (imdbRating, rottenTomatoRating) => {
  * @param {Object} movieTileElement Object containing title details
  */
 const addRatingsToTile = async (movieTileElement) => {
-    const videoTitle = getTitleFromCard(movieTileElement);
-    const tileParent = document.querySelector(
-        '.previewModal--metadatAndControls-container'
-    );
-    const ratings = await getRatings(videoTitle);
+  const videoTitle = getTitleFromCard(movieTileElement);
+  const tileParent = document.querySelector(".previewModal--metadatAndControls-container");
+  const ratings = await getRatings(videoTitle);
 
-    if (!movieTileElement.hasAttribute('ratings')) {
-        movieTileElement.insertAdjacentHTML(
-            'afterend',
-            getInnerHTML(ratings.imdbRating, ratings.rottenTomato)
-        );
-        movieTileElement.setAttribute('ratings', ratings);
-    }
+  if (!movieTileElement.hasAttribute("ratings")) {
+    movieTileElement.insertAdjacentHTML("afterend", getInnerHTML(ratings.imdbRating, ratings.rottenTomato));
+    movieTileElement.setAttribute("ratings", ratings);
+  }
 };
 
 /**
@@ -73,22 +68,22 @@ const addRatingsToTile = async (movieTileElement) => {
  * @param {*} callback callback function
  */
 const induceDelay = (elem, callback) => {
-    elem.onmouseover = () => {
-        setTimeout(() => callback(elem), 2000);
-    };
+  elem.onmouseover = () => {
+    setTimeout(() => callback(elem), 2000);
+  };
 };
 
 /**
  * Observes changes in DOM and triggers the calls to addRatingsToTile, getTitleAndDateFromModal
  */
 const observeChangesInDom = async () => {
-    const netflixAllTitles = document.querySelectorAll('[id^="title-"]');
-    getTitleAndDateFromModal()
-    for (title of netflixAllTitles) {
-        const elem = title.firstChild;
-        induceDelay(elem, addRatingsToTile);
-    }
-    setTimeout(observeChangesInDom, 500);
+  const netflixAllTitles = document.querySelectorAll('[id^="title-"]');
+  getTitleAndDateFromModal();
+  for (title of netflixAllTitles) {
+    const elem = title.firstChild;
+    induceDelay(elem, addRatingsToTile);
+  }
+  setTimeout(observeChangesInDom, 500);
 };
 
 observeChangesInDom();
