@@ -1,5 +1,3 @@
-const { RATINGS } = require("../appConstants");
-
 /**
  * Get ratings details based on the series/movie title
  * @param {String} title Title of the series/movie
