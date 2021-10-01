@@ -61,7 +61,7 @@ describe('Testing of the Client Side API Service', function(){
     it("Check if reviews are fetched", async function(){
         imdbId = "tt1375666"
         ratings = await apiService.fetchReviews(imdbId)
-        console.log("Ratings:", ratings)
+        console.log("Reviews:", ratings)
         assert.isNotEmpty(ratings)
         assert.isString(ratings[0]["publisher"])
         assert.isString(ratings[0]["review"])

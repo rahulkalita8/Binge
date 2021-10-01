@@ -20,7 +20,7 @@ This directory contains all the CSS files responsible for styling various sectio
 ## JS
 This directory contains all the JS files for developing various sections. Currently each file is modular to handle separate functionalities like :
 
-1. modalContent.js - Takes care of handling JS functions to display the rating details on the modal view.
+1. modalContent.js - Takes care of handling JS functions to display the rating and metacritic review details on the modal view.
 2. content.js - Contains the basic API parsing to get the required JSON information to display on different sections.
 3. appConstants.js - Stores some API-KEY information.
 4. apiService.js - Contains code that invokes the backend API to get necessary information for a video content.

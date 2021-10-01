@@ -1,3 +1,7 @@
+/**
+ * Fetched OMDB API key from local storage
+ * @returns OMDB API Key
+ */
 const getApiKeyFromStorage = async () => {
     return new Promise((resolve) => {
             api_key = null
@@ -8,6 +12,10 @@ const getApiKeyFromStorage = async () => {
         });
 };
 
+/**
+ * Fetched IMDB API key from local storage
+ * @returns IMDB API Key
+ */
 const getImdbApiKeyFromStorage = async () => {
     return new Promise((resolve) => {
         api_key = null

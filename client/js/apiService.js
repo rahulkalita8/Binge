@@ -62,14 +62,18 @@ const fetchRatings = async (title) => {
     return defaultRatings;
 };
 
-
-const extractReview = async (imdbResponseJson) => {
+/**
+ * Extracts reviews from the api data list
+ * @param {Object} reviewsArray Object with review details 
+ * @returns Object with metacritic reviews and publisher
+ */
+const extractReview = async (reviewsArray) => {
     let data = []
-    if (imdbResponseJson["items"] && imdbResponseJson["items"].length != 0){
-        for(item in imdbResponseJson["items"]){
+    if (reviewsArray["items"] && reviewsArray["items"].length != 0){
+        for(item in reviewsArray["items"]){
             let object = {
-                "publisher": imdbResponseJson["items"][item].publisher,
-                "review": imdbResponseJson["items"][item].content
+                "publisher": reviewsArray["items"][item].publisher,
+                "review": reviewsArray["items"][item].content
             }
             data.push(object)
         }
@@ -77,6 +81,11 @@ const extractReview = async (imdbResponseJson) => {
     return data
 }
 
+/**
+ * Invokes the IMDB-API with IMDB Movie Id and API key
+ * @param {String} imdbId IMDB id of the movie
+ * @returns Object with metacritic reviews and publisher
+ */
 const fetchReviews = async(imdbId) => {
     // we will add functionality for user to give their keys using popup.html
     // we can discuss scope. we can do it or it can be added as future scope.
