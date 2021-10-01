@@ -1,45 +1,31 @@
-// const RATINGS = 'ratings';
-
+/**
+ * Fetch title from object
+ * @param {Object} elem DOM object
+ * @returns title of the movie / series
+ */
 function getTitleFromCard(elem) {
     const title = elem.firstElementChild.innerText;
     return title || '';
 }
 
-// const getRatings = async (title) => {
-//     const ratingsInLocalStorage = getRatingsFromLocalStorage(title);
-
-//     if (ratingsInLocalStorage) {
-//         return ratingsInLocalStorage;
-//     }
-
-//     const titleRatings = await fetchRatings(title);
-//     storeRatingsInLocalStorage(title, titleRatings);
-//     return titleRatings;
-// };
-
-// function storeRatingsInLocalStorage(title, ratings) {
-//     if (title && ratings) {
-//         let ratingsInStorage = JSON.parse(localStorage.getItem(RATINGS));
-//         if (!ratingsInStorage) {
-//             ratingsInStorage = {};
-//         }
-//         ratingsInStorage[title] = ratings;
-//         localStorage.setItem(RATINGS, JSON.stringify(ratingsInStorage));
-//     }
-// }
-
-// function getRatingsFromLocalStorage(title) {
-//     const ratingsInLocalStorage = JSON.parse(localStorage.getItem(RATINGS));
-//     const titleRatings = ratingsInLocalStorage && ratingsInLocalStorage[title];
-//     return titleRatings;
-// }
-
+/**
+ * Create ratings div element
+ * @param {String} title Name of the movie / series
+ * @param {String} rating String containing ratings
+ * @returns New div object
+ */
 const getRatingDivElement = (title, rating) => {
     const div = document.createElement('div');
     div.innerHTML = `${title} rating: ${rating}`;
     return div;
 };
 
+/**
+ * HTML content to ratings div on main page
+ * @param {String} imdbRating IMDB rating for the movie
+ * @param {String} rottenTomatoRating Rotten tomato rating for the movie
+ * @returns HTML content with raings information
+ */
 const getInnerHTML = (imdbRating, rottenTomatoRating) => {
     const innerHTML = `
     <div>
@@ -61,6 +47,10 @@ const getInnerHTML = (imdbRating, rottenTomatoRating) => {
     return innerHTML;
 };
 
+/**
+ * Add ratings div to title card
+ * @param {Object} movieTileElement Object containing title details
+ */
 const addRatingsToTile = async (movieTileElement) => {
     const videoTitle = getTitleFromCard(movieTileElement);
     const tileParent = document.querySelector(
@@ -77,12 +67,20 @@ const addRatingsToTile = async (movieTileElement) => {
     }
 };
 
+/**
+ * Induces delay on function callback for element
+ * @param {Object} elem DOM object
+ * @param {*} callback callback function
+ */
 const induceDelay = (elem, callback) => {
     elem.onmouseover = () => {
         setTimeout(() => callback(elem), 2000);
     };
 };
 
+/**
+ * Observes changes in DOM and triggers the calls to addRatingsToTile, getTitleAndDateFromModal
+ */
 const observeChangesInDom = async () => {
     const netflixAllTitles = document.querySelectorAll('[id^="title-"]');
     getTitleAndDateFromModal()
