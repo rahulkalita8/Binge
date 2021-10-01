@@ -12,15 +12,17 @@
                 "client/js/apiService.js",
                 "client/js/modalContent.js",
                 "client/js/content.js",
-                "client/js/common/common.js"
+                "client/js/common/common.js",
+                "client/js/netflix/watchScreen.js"
             ],
-                        
             "css": [
-                "client/css/reviews.css"
+                "client/css/reviews.css",
+                "client/css/cast.css"
             ],
-
-            "matches": ["*://*.netflix.com/browse*", 
-                "*://*.netflix.com/search*"]
+            "matches": [
+                "*://*.netflix.com/browse*",
+                "*://*.netflix.com/search*"
+            ]
         },
         {
             "js": [
@@ -29,15 +31,17 @@
                 "client/js/apiService.js",
                 "client/js/common/common.js",
                 "client/js/netflix/watchScreen.js"
-                
             ],
-                        
             "css": [
                 "client/css/cast.css"
             ],
-
-            "matches": ["*://*.netflix.com/watch/*"]
+            "matches": [
+                "*://*.netflix.com/watch/*"
+            ]
         }
     ],
-    "permissions": ["storage", "tabs"]
+    "permissions": [
+        "storage",
+        "tabs"
+    ]
 }
