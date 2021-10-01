@@ -36,7 +36,7 @@ const getTitleAndDateFromModal = async() => {
         
         if(ratings){
             //ratingsDiv - contains the div element created for ratings
-            if(ratings["reviews"].length != 0){
+            if(ratings["reviews"].length != 0 && ratings["reviews"][0]["review"] != ""){
                 let reviewsDiv = createReviewsDiv(reviewsDivId, ratings)
                 addRatingsToInfoModal(reviewsDiv)
                 addEventLisitner()
