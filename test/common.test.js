@@ -2,47 +2,10 @@ var assert = require('chai').assert;
 
 const commonFile = require("../client/js/common/common");
 
-const chrome = require('sinon-chrome');
-const fetch = require("isomorphic-fetch")
+// const chrome = require('sinon-chrome');
+// const fetch = require("isomorphic-fetch")
 
 describe('Testing of the Client Side API Service', function(){
-
-    // before(function () {
-    //     global.chrome = chrome;
-    //     global.fetch = fetch;
-        
-    //     if(typeof window !== 'undefined') {
-    //         console.log('window is defined');
-    //         global = window;
-    //     }
-    
-    //     function mockStorage() {
-    //         var storage = {};
-    //         return {
-    //             setItem: function(key, value) {
-    //                 storage[key] = value || '';
-    //             },
-    //             getItem: function(key) {
-    //                 return storage[key];
-    //             },
-    //             removeItem: function(key) {
-    //                 delete storage[key];
-    //             },
-    //             get length () {
-    //                 return Object.keys(storage).length;
-    //             },
-    //             key: function(i) {
-    //                 var keys = Object.keys(storage);
-    //                 return keys[i] || null;
-    //             }
-    //         };
-    //     }
-
-    //     global.localStorage = mockStorage();
-    //     global.RATINGS = appConstants.RATINGS
-    //     global.CASTS = appConstants.CASTS
-        
-    // });
 
     it("Check if ratings are fetched", async function(){
         title = "Inception"
