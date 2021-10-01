@@ -11,14 +11,12 @@ const fetch = require("isomorphic-fetch")
 
 describe('Testing of the Client Side API Service', function(){
 
-    before(function () {
-        global.chrome = chrome;
-        global.fetch = fetch;
-        global.getApiKeyFromStorage = getApiKeyFromStorage
-        global.LOCAL_STORAGE_API_KEY = LOCAL_STORAGE_API_KEY
-        global.getImdbApiKeyFromStorage = getImdbApiKeyFromStorage
-        global.LOCAL_STORAGE_IMDB_API_KEY = LOCAL_STORAGE_IMDB_API_KEY
-    });
+    // before(function () {
+    //     global.chrome = chrome;
+    //     global.fetch = fetch;
+    //     global.getApiKeyFromStorage = getApiKeyFromStorage
+    //     global.LOCAL_STORAGE_API_KEY = LOCAL_STORAGE_API_KEY
+    // });
 
     var title;
     it("Check if ratings are fetched", async function(){
