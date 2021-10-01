@@ -20,8 +20,7 @@
             ],
 
             "matches": ["*://*.netflix.com/browse*", 
-                "*://*.netflix.com/search*", 
-                "*://*.netflix.com/watch/*"]
+                "*://*.netflix.com/search*"]
         },
         {
             "js": [
